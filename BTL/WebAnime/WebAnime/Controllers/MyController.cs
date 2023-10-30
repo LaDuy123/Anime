@@ -24,12 +24,21 @@ namespace WebAnime.Controllers
         }
         public IActionResult AnimeTheoLoai(int? mid, int? page)
         {
-           
+            if (mid == null)
+            {
+                int pageSize = 9;
+                int pageNumber = page == null || page < 0 ? 1 : page.Value;
+
+                var lstanime = db.Animes.Include(m => m.TheLoai).OrderBy(x => x.MaAnime).ToPagedList(pageNumber, pageSize);
+                return View(lstanime);
+            }
+            else
+            {
                 int pageSize = 9;
                 int pageNumber = page == null || page < 0 ? 1 : page.Value;
                 var lstanime = db.Animes.Where(l => l.MaTheLoai == mid).Include(m => m.TheLoai).OrderBy(x => x.MaAnime).ToPagedList(pageNumber, pageSize);
                 return View(lstanime);
-                
+            }
         }
         public IActionResult Details(int id)
         {
@@ -111,6 +120,10 @@ namespace WebAnime.Controllers
                 
             }
 
+        }
+        public IActionResult Blog()
+        {
+            return View();
         }
     }
 }
