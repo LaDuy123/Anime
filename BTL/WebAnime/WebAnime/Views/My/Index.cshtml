@@ -113,7 +113,7 @@
                         <div class="filter__gallery">
                              @foreach (var item in Model)
                             {
-                                @if (item.LuotView > 22 && count2 < 3)
+                                @if (item.LuotView > 25 && count2 < 3)
                                 {
                                     <div class="product__sidebar__view__item set-bg mix day years">
                                         <a asp-action="Details" asp-route-id="@item.MaAnime" > <img src="~/images/@item.Anh" width="350" height="190" /></a>
@@ -160,17 +160,27 @@
 </div>
 @section Scripts {
     <script>
-        $("li").click(function (e) {
-            var id = $(this).attr("id");
+        function loadContent(page, mid) {
             $.ajax({
                 url: "/My/AjaxTheLoai",
-                data: { mid: id },
-                success: function (reponse) {
-                    $("div#content").html(reponse);
+                data: { mid: mid, page: page },
+                success: function (response) {
+                    $("div#content").html(response);
                 }
             });
-        })
+        }
+
+        $("li").click(function (e) {
+            e.preventDefault();
+            var currentPage = parseInt($(".pagination .active > span").text());
+            var mid = $(this).attr("id"); // Lấy giá trị của tham số mid từ phần tử đang được click
+            loadContent(currentPage, mid);
+        });
+
+        function loadPage(page, mid) {
+            var currentPage = parseInt($(".pagination .active > span").text());
+            loadContent(page, mid);
+        }
     </script>
 }
-
 

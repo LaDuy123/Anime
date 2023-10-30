@@ -64,7 +64,7 @@
                 </div>
                 <div class="product__pagination">
 
-                    @Html.PagedListPager(Model, page=>Url.Action("AnimeTheoLoai", new{mid = Model.FirstOrDefault()?.MaTheLoai,page = page}))
+                    @Html.PagedListPager(Model, page => "javascript:loadPage(" + page + ", " + Model.FirstOrDefault()?.MaTheLoai + ")")
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-8">

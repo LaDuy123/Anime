@@ -57,7 +57,6 @@ namespace WebAnime.Controllers
                     .Include(m => m.TrangThai)
                     .Include(m => m.LichChieu)
                     .SingleOrDefault(a => a.MaAnime == id);
-
                 var video1 = db.ViDeos
                     .Where(x => x.MaAnime == id)
                     .ToList();
@@ -75,7 +74,6 @@ namespace WebAnime.Controllers
 
                 return View(anime);
             }
-
         }
         public IActionResult NextWatching(int id, int tapSo)
         {
@@ -109,7 +107,6 @@ namespace WebAnime.Controllers
                 return View(anime);
                 
             }
-
         }
         public IActionResult Blog()
         {
@@ -122,7 +119,7 @@ namespace WebAnime.Controllers
         public IActionResult AjaxTheLoai(int mid,int? page)
         {
             int pageSize = 9;
-            int pageNumber = page == null || page < 0 ? 1 : page.Value;
+             int pageNumber = page.HasValue && page.Value > 0 ? page.Value : 1;
             var lstanime = db.Animes.Where(l => l.MaTheLoai == mid).Include(m => m.TheLoai).OrderBy(x => x.MaAnime).ToPagedList(pageNumber, pageSize);
             return PartialView("TheLoai",lstanime);
         }
