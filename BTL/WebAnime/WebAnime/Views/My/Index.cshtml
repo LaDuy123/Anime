@@ -1,0 +1,161 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    var count1 = 0;
+    var count2 = 0;
+    var count3 = 0;
+}
+@model IEnumerable<Anime>
+<section class="hero">
+    <div class="container">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="hero__text">
+                            <div class="label">Adventure</div>
+                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
+                            <p>After 30 days of travel across the world...</p>
+                            <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="hero__text">
+                            <div class="label">Adventure</div>
+                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
+                            <p>After 30 days of travel across the world...</p>
+                            <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="hero__text">
+                            <div class="label">Adventure</div>
+                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
+                            <p>After 30 days of travel across the world...</p>
+                            <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="product spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="trending__product">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8">
+                            <div class="section-title">
+                                <h4>Trending Now</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="btn__all">
+                                <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            @if (item.Trend == 1 && count1 < 9)
+                            {
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="product__item">
+                                        <div class="product__item__pic set-bg">
+                                            <a asp-action="Details" asp-route-id="@item.MaAnime"> <img src="~/images/@item.Anh" width="230" height="325" /></a>
+                                            <div class="ep">@item.SoTap/@item.SoTap</div>
+                                            <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                            <div class="view"><i class="fa fa-eye"></i> @item.LuotView</div>
+                                        </div>
+                                        <div class="product__item__text">
+                                            <ul>
+
+                                                <li>@item.TheLoai.TenTheLoai</li>
+
+                                                <li>Movie</li>
+                                            </ul>
+                                            <h5><a  asp-action="Details" asp-route-id="@item.MaAnime">@item.TenPhim</a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                count1++;
+                            }
+                        }
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="product__sidebar">
+                    <div class="product__sidebar__view">
+                        <div class="section-title">
+                            <h5>Top Views</h5>
+                        </div>
+                        <ul class="filter__controls">
+                            <li class="active" data-filter="*">Day</li>
+                            <li data-filter=".week">Week</li>
+                            <li data-filter=".month">Month</li>
+                            <li data-filter=".years">Years</li>
+                        </ul>
+                        <div class="filter__gallery">
+                             @foreach (var item in Model)
+                            {
+                                @if (item.LuotView > 22 && count2 < 3)
+                                {
+                                    <div class="product__sidebar__view__item set-bg mix day years">
+                                        <a asp-action="Details" asp-route-id="@item.MaAnime" > <img src="~/images/@item.Anh" width="350" height="190" /></a>
+                                        <div class="ep">@item.SoTap / ?</div>
+                                        <div class="view"><i class="fa fa-eye"></i> @item.LuotView</div>
+                                        <h5><a asp-action="Details" asp-route-id="@item.MaAnime">@item.TenPhim</a></h5>
+                                    </div>
+                                    count2++;
+                                }
+                             }
+                            
+                        </div>
+                    </div>
+                    <div class="product__sidebar__comment">
+                        <div class="section-title">
+                            <h5>New Comment</h5>
+                        </div>
+                         @foreach (var item in Model)
+                        {
+                            @if (item.LuotView < 20 && count3 < 3)
+                            {
+                                <div class="product__sidebar__comment__item">
+                                    <div class="product__sidebar__comment__item__pic">
+                                        <img src="~/images/@item.Anh" width="90" height="130">
+                                    </div>
+                                    <div class="product__sidebar__comment__item__text">
+                                        <ul>
+                                            <li>@item.TheLoai.TenTheLoai</li>
+                                            <li>Movie</li>
+                                        </ul>
+                                        <h5><a asp-action="Details" asp-route-id="@item.MaAnime">@item.TenPhim</a></h5>
+                                        <span><i class="fa fa-eye"></i> @item.LuotView Viewes</span>
+                                    </div>
+                                </div>
+                                count3++;
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

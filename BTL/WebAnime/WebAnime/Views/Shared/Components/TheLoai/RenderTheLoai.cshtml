@@ -1,0 +1,14 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<TheLoai>
+<ul class="nav">
+    @foreach (var m in Model)
+    {
+        <li class="nav-item" id="@m.MaTheLoai">
+            <a asp-controller="My" asp-action="AnimeTheoLoai" asp-route-mid="@m.MaTheLoai" class="nav-link">@m.TenTheLoai</a>
+        </li>
+    }
+</ul>

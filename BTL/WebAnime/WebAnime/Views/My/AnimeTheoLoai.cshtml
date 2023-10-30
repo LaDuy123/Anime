@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    var count1 = 0;
+    var count2 = 0;
+}
+
+@using X.PagedList.Mvc.Core;
+@model X.PagedList.IPagedList<Anime>
+<section class="product-page spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="product__page__content">
+                    <div class="product__page__title">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-6">
+                                <div class="section-title">
+                                    @foreach (var item in Model.Take(1))
+                                        {
+                                            <h4>@item.TheLoai.TenTheLoai</h4>
+                                        }
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="product__page__filter">
+                                    <p>Order by:</p>
+                                    <select>
+                                        <option value="">A-Z</option>
+                                        <option value="">1-10</option>
+                                        <option value="">10-50</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg">
+                                        <a asp-action="Details" asp-route-id="@item.MaAnime"> <img src="~/images/@item.Anh" width="230" height="325" /></a>
+                                        <div class="ep">@item.SoTap/@item.SoTap</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                        <div class="view"><i class="fa fa-eye"></i> @item.LuotView</div>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <ul>
+
+                                            <li>@item.TheLoai.TenTheLoai</li>
+
+                                            <li>Movie</li>
+                                        </ul>
+                                        <h5><a asp-action="Details" asp-route-id="@item.MaAnime">@item.TenPhim</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="product__pagination">
+                    @Html.PagedListPager(Model, page=>Url.Action("AnimeTheoLoai", new{mid = Model.FirstOrDefault()?.MaTheLoai,page = page}))
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="product__sidebar">
+                    <div class="product__sidebar__view">
+                        <div class="section-title">
+                            <h5>Top Views</h5>
+                        </div>
+                        <ul class="filter__controls">
+                            <li class="active" data-filter="*">Day</li>
+                            <li data-filter=".week">Week</li>
+                            <li data-filter=".month">Month</li>
+                            <li data-filter=".years">Years</li>
+                        </ul>
+                        <div class="filter__gallery">
+                            @foreach (var item in Model)
+                            {
+                                @if (item.LuotView > 22 && count1 < 3)
+                                {
+                                    <div class="product__sidebar__view__item set-bg mix day years">
+                                        <a asp-action="Details" asp-route-id="@item.MaAnime"> <img src="~/images/@item.Anh" width="350" height="190" /></a>
+                                        <div class="ep">@item.SoTap / ?</div>
+                                        <div class="view"><i class="fa fa-eye"></i> @item.LuotView</div>
+                                        <h5><a asp-action="Details" asp-route-id="@item.MaAnime">@item.TenPhim</a></h5>
+                                    </div>
+                                    count1++;
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="product__sidebar__comment">
+                        <div class="section-title">
+                            <h5>New Comment</h5>
+                        </div>
+                        @foreach (var item in Model)
+                        {
+                            @if (item.LuotView < 20 && count2 < 3)
+                            {
+                                <div class="product__sidebar__comment__item">
+                                    <div class="product__sidebar__comment__item__pic">
+                                        <img src="~/images/@item.Anh" width="90" height="130">
+                                    </div>
+                                    <div class="product__sidebar__comment__item__text">
+                                        <ul>
+                                            <li>@item.TheLoai.TenTheLoai</li>
+                                            <li>Movie</li>
+                                        </ul>
+                                        <h5><a asp-action="Details" asp-route-id="@item.MaAnime">@item.TenPhim</a></h5>
+                                        <span><i class="fa fa-eye"></i> @item.LuotView Viewes</span>
+                                    </div>
+                                </div>
+                                count2++;
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

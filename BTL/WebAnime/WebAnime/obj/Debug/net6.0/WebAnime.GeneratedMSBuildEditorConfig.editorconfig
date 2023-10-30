@@ -1,0 +1,77 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebAnime
+build_property.RootNamespace = WebAnime
+build_property.ProjectDir = C:\Users\Duy\source\repos\Anime\BTL\WebAnime\WebAnime\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Duy\source\repos\Anime\BTL\WebAnime\WebAnime
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Duy/source/repos/Anime/BTL/WebAnime/WebAnime/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duy/source/repos/Anime/BTL/WebAnime/WebAnime/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duy/source/repos/Anime/BTL/WebAnime/WebAnime/Views/My/AnimeTheoLoai.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlcQW5pbWVUaGVvTG9haS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duy/source/repos/Anime/BTL/WebAnime/WebAnime/Views/My/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duy/source/repos/Anime/BTL/WebAnime/WebAnime/Views/My/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duy/source/repos/Anime/BTL/WebAnime/WebAnime/Views/My/NextWatching.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlcTmV4dFdhdGNoaW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duy/source/repos/Anime/BTL/WebAnime/WebAnime/Views/My/Watching.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlcV2F0Y2hpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duy/source/repos/Anime/BTL/WebAnime/WebAnime/Views/Shared/Components/TapPhim/RenderTapPhim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVGFwUGhpbVxSZW5kZXJUYXBQaGltLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duy/source/repos/Anime/BTL/WebAnime/WebAnime/Views/Shared/Components/TheLoai/RenderTheLoai.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVGhlTG9haVxSZW5kZXJUaGVMb2FpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duy/source/repos/Anime/BTL/WebAnime/WebAnime/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duy/source/repos/Anime/BTL/WebAnime/WebAnime/Views/Shared/_MainLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duy/source/repos/Anime/BTL/WebAnime/WebAnime/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duy/source/repos/Anime/BTL/WebAnime/WebAnime/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duy/source/repos/Anime/BTL/WebAnime/WebAnime/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duy/source/repos/Anime/BTL/WebAnime/WebAnime/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8qsene3mov

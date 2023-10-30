@@ -1,0 +1,12 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<ViDeo>
+
+@foreach (var video in Model)
+{
+    <li class="nav-item">
+        <a asp-controller="My" asp-action="Watching" asp-route-id="@video.MaAnime"  class="nav-link">@video.TapSo</a>
+    </li>
+}
