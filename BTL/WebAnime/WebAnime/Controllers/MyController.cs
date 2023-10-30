@@ -15,28 +15,18 @@ namespace WebAnime.Controllers
         {
             db = context;
         }
-        public IActionResult Index()
-        {
-                      
-            var lstanime = db.Animes.Include(m => m.TheLoai).OrderBy(x => x.TenPhim);
-          
-            return View(lstanime);
-        }
-        public IActionResult AnimeTheoLoai(int? mid, int? page)
+        public IActionResult Index(int? mid)
         {
             if (mid == null)
             {
-                int pageSize = 9;
-                int pageNumber = page == null || page < 0 ? 1 : page.Value;
 
-                var lstanime = db.Animes.Include(m => m.TheLoai).OrderBy(x => x.MaAnime).ToPagedList(pageNumber, pageSize);
+                var lstanime = db.Animes.Include(m => m.TheLoai).ToList();
                 return View(lstanime);
             }
             else
             {
-                int pageSize = 9;
-                int pageNumber = page == null || page < 0 ? 1 : page.Value;
-                var lstanime = db.Animes.Where(l => l.MaTheLoai == mid).Include(m => m.TheLoai).OrderBy(x => x.MaAnime).ToPagedList(pageNumber, pageSize);
+                var lstanime = db.Animes.Where(l => l.MaTheLoai == mid).Include(m => m.TheLoai).ToList();
+
                 return View(lstanime);
             }
         }
@@ -124,6 +114,17 @@ namespace WebAnime.Controllers
         public IActionResult Blog()
         {
             return View();
+        }
+        public IActionResult Login()
+        {
+            return View();
+        }
+        public IActionResult AjaxTheLoai(int mid,int? page)
+        {
+            int pageSize = 9;
+            int pageNumber = page == null || page < 0 ? 1 : page.Value;
+            var lstanime = db.Animes.Where(l => l.MaTheLoai == mid).Include(m => m.TheLoai).OrderBy(x => x.MaAnime).ToPagedList(pageNumber, pageSize);
+            return PartialView("TheLoai",lstanime);
         }
     }
 }

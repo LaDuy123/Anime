@@ -1,14 +1,16 @@
-﻿@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_MainLayout.cshtml";
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
     var count1 = 0;
     var count2 = 0;
+    var count3 = 0;
 }
-
 @using X.PagedList.Mvc.Core;
 @model X.PagedList.IPagedList<Anime>
-<section class="product-page spad">
-    <div id="content">
+<<section class="product-page spad">
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
@@ -18,9 +20,9 @@
                             <div class="col-lg-8 col-md-8 col-sm-6">
                                 <div class="section-title">
                                     @foreach (var item in Model.Take(1))
-                                        {
-                                            <h4>@item.TheLoai.TenTheLoai</h4>
-                                        }
+                                    {
+                                        <h4>@item.TheLoai.TenTheLoai</h4>
+                                    }
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-6">
@@ -61,6 +63,7 @@
                     </div>
                 </div>
                 <div class="product__pagination">
+
                     @Html.PagedListPager(Model, page=>Url.Action("AnimeTheoLoai", new{mid = Model.FirstOrDefault()?.MaTheLoai,page = page}))
                 </div>
             </div>
@@ -121,9 +124,7 @@
             </div>
         </div>
     </div>
-    </div>
 </section>
-
 
 
 

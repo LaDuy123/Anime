@@ -53,7 +53,7 @@
                             <ul>
                                 <li class="active"><a asp-controller="My" asp-action="Index">Homepage</a></li>
                                 <li>
-                                    <a asp-controller="My" asp-action="AnimeTheoLoai" asp-route-mid="1">Categories <span class="arrow_carrot-down"></span></a>
+                                    <a >Categories <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         @await Component.InvokeAsync("TheLoai")
                                     </ul>
@@ -67,7 +67,7 @@
                 <div class="col-lg-2">
                     <div class="header__right">
                         <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                        <a href="./login.html"><span class="icon_profile"></span></a>
+                        <a asp-controller="My" asp-action="Login"><span class="icon_profile"></span></a>
                     </div>
                 </div>
             </div>
